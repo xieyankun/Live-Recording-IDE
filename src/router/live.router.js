@@ -4,8 +4,6 @@
  */
 
 import Teacher from '@/views/Live/teacher/teacher'
-// import student from './../views/Live/student/student';
-// import playback from './../views/Live/playback/playback';
 
 export default [
   {

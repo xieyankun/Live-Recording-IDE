@@ -1,17 +1,28 @@
 <template>
-  <h1>teacher</h1>
-  <!-- <code-mirror></code-mirror> -->
+  <div class="title">
+    <codemirror :options="editorOptions"></codemirror>
+  </div>
 </template>
 
 <script>
-import codeMirror from '@/components/code'
+import codemirror from '@/components/codemirror/codemirror'
 export default {
+  data () {
+    return {
+      editorOptions: {
+        tabSize: 4,
+        mode: 'text/javascript',
+        theme: 'base16-dark',
+        lineNumbers: true,
+        line: true
+      }
+    }
+  },
   components: {
-    'code-mirror': codeMirror
+    'codemirror': codemirror
   }
 }
 </script>
 
 <style>
-
 </style>

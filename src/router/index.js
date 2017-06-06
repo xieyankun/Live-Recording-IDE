@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import index from '@/views/index/index'
 import code from '@/components/code'
 import LiveRouter from './live.router'
-// import Teacher from '@/views/Live/teacher/teacher'
 
 Vue.use(Router)
 
@@ -11,8 +10,8 @@ const router = {
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'index',
+      component: index
     },
     {
       path: '/code',
