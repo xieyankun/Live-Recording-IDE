@@ -7,6 +7,7 @@
           <div id="filetree">
           </div>
           <div id="codeditor">
+            <codemirror :options="editorOptions"></codemirror>
           </div>
           <div id="v-line"></div>
         </div>
@@ -21,10 +22,21 @@
 
 <script>
 /* eslint-disable */
+import codemirror from '@/components/codemirror/codemirror'
 export default {
   data () {
     return {
+      editorOptions: {
+        tabSize: 4,
+        mode: 'text/javascript',
+        theme: 'base16-dark',
+        lineNumbers: true,
+        line: true
+      }
     }
+  },
+  components: {
+    'codemirror': codemirror
   },
   mounted() {
     function $(id) {

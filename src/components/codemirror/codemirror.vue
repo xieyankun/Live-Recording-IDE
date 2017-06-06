@@ -46,3 +46,8 @@
     }
   }
 </script>
+<style>
+  .CodeMirror{
+    height: 100% !important;
+  }
+</style>
