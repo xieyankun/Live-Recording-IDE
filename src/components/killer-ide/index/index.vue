@@ -7,7 +7,10 @@
           <div id="filetree">
           </div>
           <div id="codeditor">
-            <codemirror :options="editorOptions" :config="config"></codemirror>
+            <codemirror 
+                      :options="editorConfig" 
+                      :live="liveConfig"
+                      :record="recordConfig"></codemirror>
           </div>
           <div id="v-line"></div>
         </div>
@@ -26,22 +29,37 @@ import codemirror from '../codemirror/codemirror'
 export default {
   data () {
     return {
-      editorOptions: {
+      editorConfig: {
         tabSize: 4,
         mode: 'text/javascript',
-        theme: 'base16-dark',
+        // theme: 'base16-dark',
         lineNumbers: true,
         line: true
       },
-      config: {
-        role: 0
-      }
+      liveConfig: this.live,
+      recordConfig: this.record
+    }
+  },
+  props: {
+    /*
+    * 跟随编程
+    * role 0:老师, 1:学生, 2:回放页面
+    */
+    live: {
+      type: Object
+    },
+    /*
+    * 实景编程
+    * role 0:老师, 1:学生, 2:回放页面
+    */
+    record: {
+      type: Object
     }
   },
   components: {
     'codemirror': codemirror
   },
-  mounted() {
+  mounted () {
     function $(id) {
       return document.getElementById(id)
     }
@@ -162,8 +180,8 @@ export default {
   }
 
   #codeditor{
-    /*width: calc(100% - 200px);*/
-    width: 100%;
+    width: calc(100% - 200px);
+    /*width: 100%;*/
     height: 100%;
     background: #0e8f9e;
     position: absolute;

@@ -1,10 +1,10 @@
 <template>
   <div class="student-wrap">
     <div class="teach">
-      <killer-ide></killer-ide>
+      <killer-ide :live='liveTeach'></killer-ide>
     </div>
     <div class="practice">
-      <killer-ide></killer-ide>
+      <killer-ide :live='liveStud'></killer-ide>
     </div>
 
   </div>
@@ -15,6 +15,14 @@ import killerIde from '@/components/killer-ide/index/index'
 export default {
   data () {
     return {
+      liveTeach: {
+        role: 0,
+        where: 1
+      },
+      liveStud: {
+        role: 1,
+        where: 1
+      }
     }
   },
   components: {
