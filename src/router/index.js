@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/views/index/index'
-import code from '@/components/code'
+import ide from '@/components/ide/ide'
 import LiveRouter from './live.router'
+// import RecordRouter from './record.router.js'
 
 Vue.use(Router)
 
@@ -14,9 +15,9 @@ const router = {
       component: index
     },
     {
-      path: '/code',
-      name: 'code',
-      component: code
+      path: '/ide',
+      name: 'ide',
+      component: ide
     }
   ]
 }

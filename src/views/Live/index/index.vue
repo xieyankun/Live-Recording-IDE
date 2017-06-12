@@ -1,17 +1,16 @@
 <template>
-  <div class="teacher-wrap">
-    <killer-ide></killer-ide>
+  <div class="live">
+    <router-view></router-view>
   </div>
 </template>
 <script>
-import killerIde from '@/components/killer-ide/index/index'
+
 export default {
   data () {
     return {
     }
   },
   components: {
-    'killer-ide': killerIde
   },
   mounted () {
   }
